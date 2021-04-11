@@ -11,6 +11,9 @@ inputs:
   build-target:
     description: Build target
     required: true
+  build-scenes:
+    description: List of Unity scenes to build. For example, `Assets/Scenes/Test.unity,Assets/Scenes/Test2.unity`. Only for default build method
+    required: false
   build-path:
     description: Path to build output. Only for default build method
     required: false
