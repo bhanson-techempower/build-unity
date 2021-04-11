@@ -11,7 +11,7 @@ async function run() {
         }
         const projectPath = core.getInput('project-path');
         const buildTatget = core.getInput('build-target', { required: true });
-        const buildScenes = getInput('build-scenes');
+        const buildScenes = core.getInput('build-scenes');
         const buildPath = core.getInput('build-path') || path.join('./builds', buildTatget);
         const buildVersion = core.getInput('build-version');
         const buildNumber = core.getInput('build-number');
