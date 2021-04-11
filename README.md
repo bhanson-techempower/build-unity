@@ -18,6 +18,10 @@ Path to Unity project. Used to find Unity version. Default `${{ github.workspace
 
 **Required** Build target platform.
 
+### `build-scenes`
+
+List of Unity scenes to build. For example, `Assets/Scenes/Test.unity,Assets/Scenes/Test2.unity`. Only for default build method.
+
 ### `build-path`
 
 Path to build output. Only for default build method.

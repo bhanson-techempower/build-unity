@@ -67,6 +67,12 @@ namespace kuler90
 
         private static string[] HandleScenesList(Dictionary<string, string> args)
         {
+            if (args.ContainsKey("buildScenes"))
+            {
+                var buildScenes = args["buildScenes"].Split(',').Select(x => x.Trim()).ToHashSet();
+                return EditorBuildSettings.scenes.Where(scene => buildScenes.Contains(scene.path)).Select(s => s.path).ToArray();
+            }
+
             return EditorBuildSettings.scenes.Where(scene => scene.enabled).Select(s => s.path).ToArray();
         }
 
