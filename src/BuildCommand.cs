@@ -69,7 +69,7 @@ namespace kuler90
         {
             if (args.ContainsKey("buildScenes"))
             {
-                var buildScenes = args["buildScenes"].Split(',').Select(x => x.Trim()).ToHashSet();
+                var buildScenes = new HashSet<string>(args["buildScenes"].Split(',').Select(x => x.Trim()));
                 return EditorBuildSettings.scenes.Where(scene => buildScenes.Contains(scene.path)).Select(s => s.path).ToArray();
             }
 
