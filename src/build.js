@@ -71,7 +71,7 @@ async function run() {
             buildArgs += ` -androidKeyaliasPass "${androidKeyaliasPass}"`;
         }
 
-        await exec.exec(`${unityCmd} -batchmode -nographics -quit -logFile "testlog.log" ${buildArgs} | powershell -Command "& {Get-Content testlog.log -Wait}"`);
+        await exec.exec(`${unityCmd} -batchmode -nographics -quit -logFile "-" ${buildArgs}`);
 
         core.setOutput('build-path', buildPath);
     } catch (error) {
